@@ -1,0 +1,86 @@
+html {
+  font-family: system-ui;
+  font-size: 16px;
+  padding: 16px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.card {
+  padding: 1em;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.badge {
+  background-color: aliceblue;
+  color: darkblue;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+.sub-group-serial {
+  padding-left: 32px;
+}
+
+.sub-group-parallel {
+  margin-top: 0;
+  overflow: hidden;
+  padding-left: 32px;
+}
+
+.sub-group-parallel > li::before {
+  content: '';
+  position: absolute;
+  top: calc(16px - 1000px);
+  left: -16px;
+  width: 15px;
+  height: 5px;
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  height: 1000px;
+  border-bottom-left-radius: 6px;
+}
+
+.sub-group > li {
+  position: relative;
+  margin-top: 16px;
+}
+
+.sub-group-serial > li::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  width: 1px;
+  height: 16px;
+  background: lightgray;
+}
+
+.sub-group-serial > li:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 15px;
+  height: 32px;
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  border-bottom-left-radius: 6px;
+  background: none;
+}
+
+/* card + card trick here for inset margins on left */
+
+/* use ::before selector for connector lines */

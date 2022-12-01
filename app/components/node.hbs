@@ -1,0 +1,15 @@
+{{!-- template-lint-disable no-invalid-role --}}
+<li role="none">
+  <div class="card">
+    {{!-- template-lint-disable require-context-role --}}
+    <a href="#" role="treeitem">{{@node.step.name}}</a>
+    {{#if (eq @node.step.name @current)}}
+      <span class="badge">You are here</span>
+    {{/if}}
+  </div>
+  <ul role="group" class="sub-group sub-group-{{@node.children.mode}}">
+    {{#each @node.children.nodes as |child|}}
+      <Node @node={{child}} />
+    {{/each}}
+  </ul>
+</li>
